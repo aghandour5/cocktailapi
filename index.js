@@ -3,7 +3,7 @@ import axios from "axios";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 4000;
+const port = 3000;
 const API_URL = "www.thecocktaildb.com/api/json/v1/1/";
 
 app.use(express.static("public"));
