@@ -136,13 +136,14 @@ nav {
   margin-bottom: 8px;
   font-size: 1.5rem;
   color: #3f96ff;
-  font-family: 'Titan One', cursive, sans-serif;
+  font-family: 'Neo Sans Arabic', sans-serif;
 }
 
 .cocktail-details p {
   margin: 0 0 4px 0;
   font-weight: bold;
   color: #3f96ff;
+  font-family: 'Neo Sans Arabic', sans-serif;
 }
 
 .cocktail-details span, .cocktail-details div {
@@ -249,13 +250,16 @@ footer {
 }
 
 @media (max-width: 700px) {
+  html,body {
+    overflow-x: hidden;
+  }
   .container {
     max-width: 90vw;
     padding: 0;
   }
 
   .welcome-title {
-    font-size: 2rem;
+    font-size: 4rem;
     margin: 15px 0 40px 0;
   }
 
@@ -270,10 +274,11 @@ footer {
   }
 
   .cocktail-form input[type="text"] {
-    width: 440px;
+    width: 320px;
     margin: 6px 0 0 0;
     font-size: 1rem;
     padding: 8px 10px;
+    font-family: 'Neo Sans Arabic', sans-serif;
   }
 
   .filter-group {
@@ -299,16 +304,16 @@ footer {
   }
 
   .cocktail-card {
-    width: 90vw;
+    width: 65vw;
     max-width: 320px;
-    height: 180px;
+    height: 300px;
     border-radius: 18px;
   }
 
   .cocktail-card img {
     min-width: unset;
     border-radius: 12px;
-    max-width: 70vw;
+    max-width: 65vw;
   }
 
   .cocktail-details {

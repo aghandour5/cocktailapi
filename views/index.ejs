@@ -56,21 +56,16 @@
         <div class="cocktail-details">
           <!-- Display cocktail details here -->
           <h2>Cocktail Details</h2>
-          <p>Id:</p>
-          <%= cocktailId %>
-          <p>Name:</p>
-          <%= cocktailName %>
+          <p>Id: <%= cocktailId %></p>
+          <p>Name: <%= cocktailName %></p>
           <% if (locals.cocktailCategory) { %>
-          <p>Category:</p>
-          <%= cocktailCategory %>
+          <p>Category: <%= cocktailCategory %></p>
           <% } %>
           <% if (locals.cocktailAlcoholic) { %>
-          <p>Alcoholic:</p>
-          <%= cocktailAlcoholic %>
+          <p>Alcoholic: <%= cocktailAlcoholic %></p>
           <% } %>
           <% if (locals.cocktailInstructions) { %>
-          <p>Instructions:</p>
-          <%= cocktailInstructions %>
+          <p>Instructions: <%= cocktailInstructions %></p>
           <% } %>
           <!-- Add more cocktail details here -->
           <% } else if (locals.cocktailName === null) { %>
