@@ -64,7 +64,7 @@
           <!-- Add more cocktail details here -->
           <% } else if (locals.cocktailName === null) { %>
           <div class="welcome-info">
-            <p>Use the form above to search for cocktails by name, list cocktails by first letter, or look up details by ID or at random!</p>
+            <p>Use the form above to search for cocktails by name, filter cocktails by alcoholic, by category, or at random!</p>
           </div>
           <% } else if (locals.error) { %>
           <div class="welcome-info">
@@ -73,7 +73,6 @@
           </div>
           <% } else { %>
           <div class="welcome-info">
-            <h2>Search Results</h2>
             <p>No cocktail found with the given criteria.</p>
           </div>
           <% } %>
