@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="/" class="home-link">HOME</a>
+      </nav>
+      <h1 class="welcome-title">Welcome</h1>
+      <form class="cocktail-form" method="post">
+        <label>
+          Search cocktail by name
+          <input type="text" name="name"/>
+          <button type="submit" name="random" value="true" class="go-btn" formaction="/searchcocktail">Go!</button>
+        </label>
+        <fieldset class="filter-group">
+          <legend>Filter by Alcoholic</legend>
+          <span><button type="submit" name="alcoholic" value="Alcoholic" class="go-btn" formaction="/listalcoholic">Alcoholic</button></span>
+          <span><button type="submit" name="alcoholic" value="Non_Alcoholic" class="go-btn2" formaction="/listalcoholic">Non Alcoholic</button></span>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Filter by Category</legend>
+          <span><button type="submit" name="category" value="Ordinary_Drink" class="go-btn" formaction="/category">Ordinary Drink</button></span>
+          <span><button type="submit" name="category" value="Cocktail" class="go-btn2" formaction="/category">Cocktail</button></span>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Filter by Alcoholic</legend>
+          <span><button type="submit" name="alcoholic" value="Alcoholic" class="go-btn" formaction="/listalcoholic">Alcoholic</button></span>
+          <span><button type="submit" name="alcoholic" value="Non_Alcoholic" class="go-btn2" formaction="/listalcoholic">Non Alcoholic</button></span>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Lookup a random cocktail</legend>
+          <span><button type="submit" name="random" value="true" class="go-btn" formaction="/random">Go!</button></span>
+        </fieldset>
+      </form>
+      <% if (locals.cocktailId) { %>
+      <div class="card">
+        <div class="cocktail-card">
+          <!-- Place cocktail image here, e.g.: -->
+          <img src="<%= source %>" alt="Cocktail" />
+        </div>
+        <div class="cocktail-details">
+          <!-- Display cocktail details here -->
+          <h2>Cocktail Details</h2>
+          <p>Id:</p>
+          <%= cocktailId %>
+          <p>Name:</p>
+          <%= cocktailName %>
+          <% if (locals.cocktailCategory) { %>
+          <p>Category:</p>
+          <%= cocktailCategory %>
+          <% } %>
+          <% if (locals.cocktailAlcoholic) { %>
+          <p>Alcoholic:</p>
+          <%= cocktailAlcoholic %>
+          <% } %>
+          <% if (locals.cocktailInstructions) { %>
+          <p>Instructions:</p>
+          <%= cocktailInstructions %>
+          <% } %>
+          <!-- Add more cocktail details here -->
+          <% } else if (locals.cocktailName === null) { %>
+          <div class="welcome-info">
+            <p>Use the form above to search for cocktails by name, list cocktails by first letter, or look up details by ID or at random!</p>
+          </div>
+          <% } else if (locals.error) { %>
+          <div class="welcome-info">
+            <h2>Error</h2>
+            <p><%= error %></p>
+          </div>
+          <% } else { %>
+          <div class="welcome-info">
+            <h2>Search Results</h2>
+            <p>No cocktail found with the given criteria.</p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <footer>
+        Made with ❤️ by Ali Ghandour
+      </footer>
+  </body>
+</html>
